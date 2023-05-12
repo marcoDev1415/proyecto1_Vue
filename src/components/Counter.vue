@@ -1,31 +1,25 @@
 <template>
    <h1>Counter</h1>
    <p>{{ counter }} <sup>2</sup> = {{ counter * counter }} </p>
-
-   <p>{{ counter }} <sup>2</sup> = {{squareCounter}} </p>
-   <p>{{ counter }} <sup>2</sup> = {{squareCounter}} </p>
-
-   <p>{{ counter }} <sup>2</sup> = {{squareCounter}} </p>
-
-   <p>{{ counter }} <sup>2</sup> = {{squareCounter}} </p>
-
-   <p>{{ counter }} <sup>2</sup> = {{squareCounter}} </p>
-
-   <p>{{ counter }} <sup>2</sup> = {{getValue()}} </p>
    
-   <p>{{ counter }} <sup>2</sup> = {{getValue()}} </p>
-  
-   
-   <p>{{ counter }} <sup>2</sup> = {{getValue()}} </p>
-  
-  
+   <p> Valor original {{ acum }} = {{ counter }} </p>
+    
+   <div>
+     <div>
+      <button class="myButton" v-on:click = "increment()" >Sumar</button>
+     </div>
+     <div class="marginTop">
+      <button class="myButton2" v-on:click = "decremente()" >Restar</button>
+     </div>
+   </div>
 </template>
 <script>
   export default{
     //name: 'counter
     data(){
       return{
-        counter: 5
+        counter: 5,
+        acum:0
 
       }
     },
@@ -33,15 +27,77 @@
       getValue(){
         console.log('getValue');
         return this.counter * this.counter;
+      },
+      increment(){
+        this.acum = this.counter;
+        return this.counter = this.counter + 1;
+      },
+      decremente(){
+        this.acum = this.counter;
+        return this.counter = this.counter - 1;
       }
+      
     },
     computed:{
       squareCounter(){
         console.log('squareCounter')
-        return this.counter * this.counter
-      }
+        return this.counter * this.counter;
+      },
+     
     }
   }
 </script>
 <style>
+
+.myButton {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+
+.myButton2 {
+	background-color:#449dc7;
+	border-radius:28px;
+	border:1px solid #449dc7;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.marginTop{
+
+  margin-top: 1%;
+}
+
+.myButton2:hover {
+	background-color:#5cbf2a;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+
+        
 </style>
