@@ -1,6 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Counter/>
+
+  <Counter title="Entraron"/>
+
+  <Counter title="Salida"/>
+
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 <template>
-   <h1>Counter</h1>
+   <h1>{{changeValor}}</h1>
    <p>{{ counter }} <sup>2</sup> = {{ counter * counter }} </p>
    
    <p> Valor original {{ acum }} = {{ counter }} </p>
     
    <div>
      <div>
-      <button class="myButton" v-on:click = "increment()" >Sumar</button>
+      <button class="myButton" @click = "increment()" >Sumar</button>
      </div>
      <div class="marginTop">
       <button class="myButton2" v-on:click = "decremente()" >Restar</button>
@@ -15,6 +15,8 @@
 </template>
 <script>
   export default{
+
+    props:['title'],
     //name: 'counter
     data(){
       return{
@@ -43,6 +45,14 @@
         console.log('squareCounter')
         return this.counter * this.counter;
       },
+      changeValor(){
+           if (this.title !== undefined){
+            return this.title
+           }else{
+            return 'counter'
+           }
+          return this.title
+      }
      
     }
   }
