@@ -1,7 +1,7 @@
 <template>
    <h1>{{changeValor}}</h1>
-   <p>{{ counter }} <sup>2</sup> = {{ counter * counter }} </p>
-   
+   <p>{{ counter + start }} <sup>2</sup> = {{ counter * counter }} </p>
+ 
    <p> Valor original {{ acum }} = {{ counter }} </p>
     
    <div>
@@ -14,9 +14,17 @@
    </div>
 </template>
 <script>
+
   export default{
 
-    props:['title'],
+    props: {
+      title: String,
+      start: {
+        type : Number ,
+        default : 100
+        //required: true
+      } 
+    },
     //name: 'counter
     data(){
       return{

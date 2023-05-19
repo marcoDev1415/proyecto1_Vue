@@ -1,8 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
 
-  <Counter title="Entraron"/>
-
+  <Counter title="Entraron"  :start="15"/>
+  <hr>
   <Counter title="Salida"/>
 
 </template>
